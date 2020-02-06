@@ -1,0 +1,29 @@
+Name: Madisyn McFarlane
+
+No outside references or collaborations were utilized in this project. 
+
+Project 3 is a simple http server which takes a file path from the client and 
+either removes it from the directory, returns the size of the file, or returns 
+the contents of the file depending on the user's choice given before the
+file path in the curl command to call the server.
+
+1. If the port number is already in allocated, the server aborts and gives
+   the error message:  Error! EADDRINUSE 
+
+2. If the port number is less than 1025, the server aborts and gives the error
+   message: Error! EACCES
+
+3. If you use a random port for your server, then each time the server is started, the
+   port number is different. This is not very useful for real world deployment
+   because any time you have to restart the server, you'd have a different port
+   and you would have to find a way to communicate this port number to every single user
+   who is trying to connect to the server.
+
+4. You would not need to add any lines of code in order to add another file type, but in
+   my implementation of the code, you would need to modify 5 lines of code to add the
+   new file type.
+
+5. No matter what order they were sent in, the percieved time to see the complete
+   contents of their file would be the same as the time it takes to read the file.
+   This is because asynchronous functions run in the background, allowing new requests
+   to be sent and fulfilled while others are still waiting for a response.
